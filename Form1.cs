@@ -236,7 +236,7 @@ namespace Publisher_Subscriber_Design_Pattern
 
             if (Counter >= 250 && !IsRedLight)
             {
-                picLight.Image = Properties.Resources.LightYellow;
+                picLight.Image = Properties.Resources.LightOrange;
 
                 if (Counter == 300 && !IsRedLight)
                 {
@@ -250,7 +250,7 @@ namespace Publisher_Subscriber_Design_Pattern
          
             else if (Counter >= 170 && IsRedLight)
             {
-                picLight.Image = Properties.Resources.LightYellow;
+                picLight.Image = Properties.Resources.LightOrange;
 
                 if (Counter == 200 && IsRedLight)
                 {

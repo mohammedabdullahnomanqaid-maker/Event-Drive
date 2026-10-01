@@ -66,6 +66,12 @@
     <Compile Include="uctDetained.Designer.cs">
       <DependentUpon>uctDetained.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctTraficLight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctTraficLight.Designer.cs">
+      <DependentUpon>uctTraficLight.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="uctDetained.resx">
       <DependentUpon>uctDetained.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctTraficLight.resx">
+      <DependentUpon>uctTraficLight.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

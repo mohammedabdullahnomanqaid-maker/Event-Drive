@@ -153,9 +153,9 @@ namespace Publisher_Subscriber_Design_Pattern.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LightRed {
+        internal static System.Drawing.Bitmap LightOrange {
             get {
-                object obj = ResourceManager.GetObject("LightRed", resourceCulture);
+                object obj = ResourceManager.GetObject("LightOrange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Publisher_Subscriber_Design_Pattern.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LightYellow {
+        internal static System.Drawing.Bitmap LightRed {
             get {
-                object obj = ResourceManager.GetObject("LightYellow", resourceCulture);
+                object obj = ResourceManager.GetObject("LightRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
