@@ -37,6 +37,7 @@ namespace Publisher_Subscriber_Design_Pattern
             // 
             // LightTimer
             // 
+            this.LightTimer.Interval = 1000;
             this.LightTimer.Tick += new System.EventHandler(this.LightTimer_Tick);
             // 
             // picLight

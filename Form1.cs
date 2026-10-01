@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using System.IO;
 using WMPLib;
 
@@ -167,20 +168,21 @@ namespace Publisher_Subscriber_Design_Pattern
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
-            
+            uctTraficLight1.Start();
+            timer2.Enabled = true;
+
             drive.SetPic(picImage);
 
             reverse.SetPic(picImage);
 
         }
 
-        int Counter = 0;
-        bool IsRedLight=false;
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-          
+
+
+
+
             if (picJear.Tag == "R")
             {
                 reverse.Subscribe(order);
@@ -195,7 +197,7 @@ namespace Publisher_Subscriber_Design_Pattern
             }
 
 
-      
+
 
         }
 
@@ -230,53 +232,29 @@ namespace Publisher_Subscriber_Design_Pattern
         }
 
         bool IsPassed = false;
+
         private void timer2_Tick(object sender, EventArgs e)
         {
-            Counter++;
 
-            if (Counter >= 250 && !IsRedLight)
+            if (IsPassRedLightTrafic())
+                IsPassed = false;
+                
+        }
+
+
+        private bool IsPassRedLightTrafic()
+        {
+            if (!IsPassed&&(uctTraficLight1.CurrentLight==uctTraficLight.enLight.eRed) && (picImage.Location.X > 785 && picImage.Location.X < 851))
             {
-                picLight.Image = Properties.Resources.LightOrange;
-
-                if (Counter == 300 && !IsRedLight)
-                {
-                    picLight.Image = Properties.Resources.LightRed;
-                    Counter = 0;
-                    IsRedLight = true;
-                 
-
-                }
-            }
-         
-            else if (Counter >= 170 && IsRedLight)
-            {
-                picLight.Image = Properties.Resources.LightOrange;
-
-                if (Counter == 200 && IsRedLight)
-                {
-                    picLight.Image = Properties.Resources.LightGreen;
-                    Counter = 0;
-                    IsPassed = false;
-                    IsRedLight = false;
-
-                }
-            }
-
-            if (!IsPassed&&IsRedLight && (picImage.Location.X > 785 && picImage.Location.X < 851))
-            {
-                MusicOfDetained();
-
-                IsPassed = true;
-                timer1.Enabled = false;
                 timer2.Enabled = false;
-                detain.Subscribe(order);
-                order.RaiseEvent();
-                detain.UnSubscribe(order);
-                timer1.Enabled = true;
+                MusicOfDetained();
+                Form frm = new frmDetaindCard();
+                frm.ShowDialog();
+                IsPassed = true;
                 timer2.Enabled = true;
+                return true;
             }
-
-
+            return false;
         }
 
 

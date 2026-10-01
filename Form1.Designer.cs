@@ -32,6 +32,12 @@ namespace Publisher_Subscriber_Design_Pattern
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picHorn = new System.Windows.Forms.PictureBox();
+            this.picDown = new System.Windows.Forms.PictureBox();
+            this.picUp = new System.Windows.Forms.PictureBox();
+            this.picJear = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
@@ -91,17 +97,17 @@ namespace Publisher_Subscriber_Design_Pattern
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.picLight = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picDown = new System.Windows.Forms.PictureBox();
-            this.picUp = new System.Windows.Forms.PictureBox();
-            this.picJear = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picHorn = new System.Windows.Forms.PictureBox();
+            this.uctTraficLight1 = new Publisher_Subscriber_Design_Pattern.uctTraficLight();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHorn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picJear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel28.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel24.SuspendLayout();
@@ -127,16 +133,9 @@ namespace Publisher_Subscriber_Design_Pattern
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picJear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -153,6 +152,73 @@ namespace Publisher_Subscriber_Design_Pattern
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1302, 85);
             this.panel1.TabIndex = 2;
+            // 
+            // picHorn
+            // 
+            this.picHorn.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.horn;
+            this.picHorn.Location = new System.Drawing.Point(402, 15);
+            this.picHorn.Name = "picHorn";
+            this.picHorn.Size = new System.Drawing.Size(82, 52);
+            this.picHorn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHorn.TabIndex = 12;
+            this.picHorn.TabStop = false;
+            this.picHorn.Click += new System.EventHandler(this.picHorn_Click);
+            // 
+            // picDown
+            // 
+            this.picDown.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.Down;
+            this.picDown.Location = new System.Drawing.Point(769, 45);
+            this.picDown.Name = "picDown";
+            this.picDown.Size = new System.Drawing.Size(82, 37);
+            this.picDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDown.TabIndex = 11;
+            this.picDown.TabStop = false;
+            this.picDown.Click += new System.EventHandler(this.picDown_Click);
+            // 
+            // picUp
+            // 
+            this.picUp.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.Up;
+            this.picUp.Location = new System.Drawing.Point(769, 2);
+            this.picUp.Name = "picUp";
+            this.picUp.Size = new System.Drawing.Size(82, 37);
+            this.picUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUp.TabIndex = 10;
+            this.picUp.TabStop = false;
+            this.picUp.Click += new System.EventHandler(this.picUp_Click);
+            // 
+            // picJear
+            // 
+            this.picJear.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.PointOnD;
+            this.picJear.Location = new System.Drawing.Point(567, 3);
+            this.picJear.Name = "picJear";
+            this.picJear.Size = new System.Drawing.Size(115, 71);
+            this.picJear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picJear.TabIndex = 6;
+            this.picJear.TabStop = false;
+            this.picJear.Tag = "D";
+            this.picJear.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(524, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.DorR;
+            this.pictureBox2.Location = new System.Drawing.Point(694, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 59);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel2
             // 
@@ -635,23 +701,13 @@ namespace Publisher_Subscriber_Design_Pattern
             // timer2
             // 
             this.timer2.Enabled = true;
-            this.timer2.Interval = 50;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timer2.Interval = 50;
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // picLight
-            // 
-            this.picLight.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.LightGreen;
-            this.picLight.Location = new System.Drawing.Point(835, 162);
-            this.picLight.Name = "picLight";
-            this.picLight.Size = new System.Drawing.Size(20, 51);
-            this.picLight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLight.TabIndex = 7;
-            this.picLight.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -683,72 +739,16 @@ namespace Publisher_Subscriber_Design_Pattern
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // picDown
+            // uctTraficLight1
             // 
-            this.picDown.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.Down;
-            this.picDown.Location = new System.Drawing.Point(769, 45);
-            this.picDown.Name = "picDown";
-            this.picDown.Size = new System.Drawing.Size(82, 37);
-            this.picDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDown.TabIndex = 11;
-            this.picDown.TabStop = false;
-            this.picDown.Click += new System.EventHandler(this.picDown_Click);
-            // 
-            // picUp
-            // 
-            this.picUp.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.Up;
-            this.picUp.Location = new System.Drawing.Point(769, 2);
-            this.picUp.Name = "picUp";
-            this.picUp.Size = new System.Drawing.Size(82, 37);
-            this.picUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUp.TabIndex = 10;
-            this.picUp.TabStop = false;
-            this.picUp.Click += new System.EventHandler(this.picUp_Click);
-            // 
-            // picJear
-            // 
-            this.picJear.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.PointOnD;
-            this.picJear.Location = new System.Drawing.Point(567, 3);
-            this.picJear.Name = "picJear";
-            this.picJear.Size = new System.Drawing.Size(115, 71);
-            this.picJear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picJear.TabIndex = 6;
-            this.picJear.TabStop = false;
-            this.picJear.Tag = "D";
-            this.picJear.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(524, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.DorR;
-            this.pictureBox2.Location = new System.Drawing.Point(694, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 59);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // picHorn
-            // 
-            this.picHorn.Image = global::Publisher_Subscriber_Design_Pattern.Properties.Resources.horn;
-            this.picHorn.Location = new System.Drawing.Point(402, 15);
-            this.picHorn.Name = "picHorn";
-            this.picHorn.Size = new System.Drawing.Size(82, 52);
-            this.picHorn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHorn.TabIndex = 12;
-            this.picHorn.TabStop = false;
-            this.picHorn.Click += new System.EventHandler(this.picHorn_Click);
+            this.uctTraficLight1.CurrentLight = Publisher_Subscriber_Design_Pattern.uctTraficLight.enLight.eRed;
+            this.uctTraficLight1.GreenTime = 10;
+            this.uctTraficLight1.Location = new System.Drawing.Point(838, 162);
+            this.uctTraficLight1.Name = "uctTraficLight1";
+            this.uctTraficLight1.OrangeTime = 3;
+            this.uctTraficLight1.RedTime = 10;
+            this.uctTraficLight1.Size = new System.Drawing.Size(18, 50);
+            this.uctTraficLight1.TabIndex = 16;
             // 
             // Form1
             // 
@@ -756,7 +756,7 @@ namespace Publisher_Subscriber_Design_Pattern
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1302, 609);
-            this.Controls.Add(this.picLight);
+            this.Controls.Add(this.uctTraficLight1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.pictureBox1);
@@ -797,6 +797,12 @@ namespace Publisher_Subscriber_Design_Pattern
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHorn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picJear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel28.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
@@ -822,16 +828,9 @@ namespace Publisher_Subscriber_Design_Pattern
             this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picJear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHorn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -901,12 +900,12 @@ namespace Publisher_Subscriber_Design_Pattern
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picJear;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox picLight;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.PictureBox picDown;
         private System.Windows.Forms.PictureBox picUp;
         private System.Windows.Forms.PictureBox picHorn;
+        private uctTraficLight uctTraficLight1;
     }
 }
 
